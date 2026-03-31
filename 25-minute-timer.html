@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>25 Minute Timer — Free Online Countdown Timer</title>
+  <meta name="description" content="Use our free 25 minute timer online for focused work sessions, studying, or quick tasks. Simple countdown timer with sound alerts and full screen mode." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pomodorotimer.one/25-minute-timer.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pomodorotimer.one/25-minute-timer.html" />
+  <meta property="og:title" content="25 Minute Timer — Free Online Countdown Timer" />
+  <meta property="og:description" content="Use our free 25 minute timer online for focused work sessions, studying, or quick tasks. Simple countdown timer with sound alerts." />
+  <meta property="og:image" content="https://pomodorotimer.one/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="google-site-verification" content="pending" />
+  <meta name="msvalidate.01" content="pending" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "25 Minute Timer",
+    "url": "https://pomodorotimer.one/25-minute-timer.html",
+    "description": "A free online 25 minute countdown timer for productivity and focus.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='55' r='40' fill='%23e63946'/><text x='50' y='65' text-anchor='middle' font-size='30' fill='white' font-family='Arial'>%E2%8F%B1</text></svg>" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-start: #0f0c29; --bg-mid: #1a1a4e; --bg-end: #16213e;
+      --accent: #e63946; --text-primary: #f0f0f0; --text-secondary: #a0a0c0;
+      --surface: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.12); --radius: 16px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%); background-attachment: fixed; color: var(--text-primary); min-height: 100vh; line-height: 1.7; }
+    .wrapper { max-width: 780px; margin: 0 auto; padding: 0 20px 60px; }
+    nav { display: flex; gap: 16px; align-items: center; padding: 20px 0 10px; flex-wrap: wrap; }
+    nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    nav a:hover { color: var(--text-primary); }
+    nav a.home { color: #e63946; font-weight: 600; }
+    .divider { color: var(--text-secondary); opacity: 0.4; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; line-height: 1.3; margin: 24px 0 12px; background: linear-gradient(90deg, #fff 40%, #e63946); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .meta { color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 28px; }
+    h2 { font-size: 1.3rem; font-weight: 600; margin: 32px 0 12px; color: #fff; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 24px 0 8px; color: #e0e0f0; }
+    p { margin-bottom: 16px; color: #d0d0e8; }
+    ul, ol { margin: 0 0 16px 24px; color: #d0d0e8; }
+    li { margin-bottom: 8px; }
+    .cta-box { background: linear-gradient(135deg, rgba(230,57,70,0.15), rgba(67,97,238,0.15)); border: 1px solid rgba(230,57,70,0.3); border-radius: var(--radius); padding: 28px; text-align: center; margin: 36px 0; }
+    .cta-box p { color: var(--text-secondary); margin-bottom: 16px; }
+    .cta-btn { display: inline-block; background: #e63946; color: #fff; text-decoration: none; padding: 14px 32px; border-radius: 999px; font-weight: 600; font-size: 1rem; transition: all 0.2s; box-shadow: 0 4px 20px rgba(230,57,70,0.4); }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(230,57,70,0.55); }
+    .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin: 20px 0; }
+    .related-links { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin: 32px 0; }
+    .related-links h3 { margin-top: 0; }
+    .related-links ul { margin-bottom: 0; }
+    .related-links a { color: #e63946; text-decoration: none; }
+    .related-links a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 0; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 40px; }
+    footer a { color: var(--text-secondary); }
+    /* Timer specific styles for this page */
+    .timer-display-page {
+      font-size: clamp(3rem, 15vw, 5rem);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin: 40px 0;
+      letter-spacing: -2px;
+    }
+    .start-button-page {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      background: #06d6a0;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(6,214,160,0.4);
+      border: none;
+      cursor: pointer;
+    }
+    .start-button-page:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(6,214,160,0.55); }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <nav>
+    <a href="/" class="home">🍅 PomodoroTimer.one</a>
+    <span class="divider">›</span>
+    <a href="/blog.html">Blog</a>
+    <span class="divider">›</span>
+    <span style="color: var(--text-primary);">25 Minute Timer</span>
+  </nav>
+
+  <h1>25 Minute Timer — Free Online Countdown Timer</h1>
+  <p class="meta">⏱ Instant 25-Minute Focus Session</p>
+
+  <div class="timer-display-page" id="timer-25-display">25:00</div>
+  <button class="start-button-page" id="start-25-timer">▶ Start 25 Minute Timer</button>
+
+  <div class="cta-box">
+    <p>Need more flexibility? Our main Pomodoro timer offers customizable durations, task lists, and advanced features.</p>
+    <a href="/" class="cta-btn">Go to Main Pomodoro Timer →</a>
+  </div>
+
+  <h2>How to Use the 25 Minute Timer for Maximum Productivity</h2>
+  <p>The 25-minute interval is the cornerstone of the Pomodoro Technique, a world-renowned productivity method. This specific duration is ideal for balancing focused work with regular, short breaks, preventing burnout and maintaining high levels of concentration.</p>
+  <p>Whether you're a student tackling assignments, a developer coding, or simply trying to get through your daily to-do list, a 25-minute timer helps you commit to a single task without distraction.</p>
+
+  <h2>Benefits of a Dedicated 25-Minute Focus Session</h2>
+  <h3>Enhanced Concentration</h3>
+  <p>Knowing you only need to focus for a short, defined period makes it easier to block out distractions. Your brain understands there's a clear end in sight, allowing for deeper concentration.</p>
+
+  <h3>Reduced Procrastination</h3>
+  <p>Starting a daunting task feels less intimidating when you only commit to 25 minutes. This small, manageable chunk encourages you to begin, often leading to more extended productive sessions once momentum builds.</p>
+
+  <h3>Improved Time Management</h3>
+  <p>Regularly using a 25-minute timer helps you develop a better sense of how long tasks actually take. This precision improves your ability to plan and estimate future workloads more accurately.</p>
+
+  <h2>Tips for Effective 25-Minute Sessions</h2>
+  <ul>
+    <li><strong>Eliminate Distractions:</strong> Turn off notifications, close unnecessary tabs, and inform colleagues/family you're in a focus session.</li>
+    <li><strong>Single-Task:</strong> Dedicate each 25-minute block to one specific task. Avoid multitasking during this period.</li>
+    <li><strong>Take Real Breaks:</strong> When the timer rings, step away. Stretch, grab water, look out a window – anything to refresh your mind for 5 minutes before the next session.</li>
+    <li><strong>Track Your Progress:</strong> Note down what you achieved in each 25-minute block. This builds a sense of accomplishment and helps you understand your work patterns.</li>
+  </ul>
+
+  <h2>When to Use Our Free 25 Minute Timer</h2>
+  <p>This timer is perfect for a variety of scenarios:</p>
+  <ul>
+    <li><strong>Studying:</strong> Break down study material into manageable chunks.</li>
+    <li><strong>Coding:</strong> Focus on debugging or writing a specific function.</li>
+    <li><strong>Writing:</strong> Draft a section of an article or outline new ideas.</li>
+    <li><strong>Email Management:</strong> Dedicate 25 minutes to clearing your inbox.</li>
+    <li><strong>House Chores:</strong> Tackle a burst of cleaning or organizing.</li>
+  </ul>
+
+  <div class="related-links">
+    <h3>Explore More Timers & Guides</h3>
+    <ul>
+      <li><a href="/pomodoro-technique.html">What is the Pomodoro Technique?</a></li>
+      <li><a href="/study-timer.html">Free Study Timer Online</a></li>
+      <li><a href="/coding-timer.html">Pomodoro Timer for Coding</a></li>
+      <li><a href="/timer-5.html">5 Minute Timer</a></li>
+      <li><a href="/timer-30.html">30 Minute Timer</a></li>
+      <li><a href="/blog.html">← Back to All Articles</a></li>
+    </ul>
+  </div>
+</div>
+<footer>
+  <p>© 2026 <a href="/">PomodoroTimer.one</a> — Free Online Timers for Focus and Productivity</p>
+  <p style="margin-top:6px; opacity:0.5;">The Pomodoro Technique® is a registered trademark of Francesco Cirillo. This site is not affiliated with him.</p>
+</footer>
+
+<script>
+  const timerDisplay25 = document.getElementById('timer-25-display');
+  const startButton25 = document.getElementById('start-25-timer');
+  let timeLeft25 = 25 * 60; // 25 minutes in seconds
+  let timerInterval25 = null;
+  let running25 = false;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function formatTime(s) { return `${pad(Math.floor(s / 60))}:${pad(s % 60)}`; }
+
+  function updateDisplay25() {
+    timerDisplay25.textContent = formatTime(timeLeft25);
+    document.title = `${formatTime(timeLeft25)} — 25 Minute Timer`;
+  }
+
+  function startTimer25() {
+    if (running25) return;
+    running25 = true;
+    startButton25.textContent = '⏸ Pause Timer';
+    startButton25.style.background = '#e63946';
+    startButton25.style.boxShadow = '0 4px 20px rgba(230,57,70,0.4)';
+
+    timerInterval25 = setInterval(() => {
+      if (timeLeft25 <= 0) {
+        clearInterval(timerInterval25);
+        running25 = false;
+        startButton25.textContent = '▶ Start 25 Minute Timer';
+        startButton25.style.background = '#06d6a0';
+        startButton25.style.boxShadow = '0 4px 20px rgba(6,214,160,0.4)';
+        timeLeft25 = 25 * 60; // Reset for next use
+        updateDisplay25();
+        // Play a simple beep sound
+        try {
+          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const oscillator = audioCtx.createOscillator();
+          const gainNode = audioCtx.createGain();
+          oscillator.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+          oscillator.type = 'sine';
+          oscillator.frequency.setValueAtTime(880, audioCtx.currentTime); // A5 note
+          gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1); // Fade out over 1 sec
+          oscillator.start();
+          oscillator.stop(audioCtx.currentTime + 1); // Stop after 1 second
+        } catch (e) { console.error("Audio playback failed:", e); }
+        return;
+      }
+      timeLeft25--;
+      updateDisplay25();
+    }, 1000);
+  }
+
+  function pauseTimer25() {
+    running25 = false;
+    clearInterval(timerInterval25);
+    startButton25.textContent = '▶ Resume Timer';
+    startButton25.style.background = '#e63946';
+    startButton25.style.boxShadow = '0 4px 20px rgba(230,57,70,0.4)';
+  }
+
+  startButton25.addEventListener('click', () => {
+    if (running25) {
+      pauseTimer25();
+    } else {
+      startTimer25();
+    }
+  });
+
+  // Initial display update
+  updateDisplay25();
+</script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>50/10 Pomodoro Timer — Extended Focus Sessions</title>
+  <meta name="description" content="Boost deep work with our free 50/10 Pomodoro timer. Ideal for extended focus sessions, coding, writing, and intensive study. Online and easy to use." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pomodorotimer.one/50-25-timer.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pomodorotimer.one/50-25-timer.html" />
+  <meta property="og:title" content="50/10 Pomodoro Timer — Extended Focus Sessions" />
+  <meta property="og:description" content="Boost deep work with our free 50/10 Pomodoro timer. Ideal for extended focus sessions." />
+  <meta property="og:image" content="https://pomodorotimer.one/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="google-site-verification" content="pending" />
+  <meta name="msvalidate.01" content="pending" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "50/10 Pomodoro Timer",
+    "url": "https://pomodorotimer.one/50-25-timer.html",
+    "description": "A free online 50/10 minute Pomodoro timer for extended focus and productivity.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='55' r='40' fill='%23e63946'/><text x='50' y='65' text-anchor='middle' font-size='30' fill='white' font-family='Arial'>%E2%8F%B1</text></svg>" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-start: #0f0c29; --bg-mid: #1a1a4e; --bg-end: #16213e;
+      --accent: #e63946; --text-primary: #f0f0f0; --text-secondary: #a0a0c0;
+      --surface: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.12); --radius: 16px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%); background-attachment: fixed; color: var(--text-primary); min-height: 100vh; line-height: 1.7; }
+    .wrapper { max-width: 780px; margin: 0 auto; padding: 0 20px 60px; }
+    nav { display: flex; gap: 16px; align-items: center; padding: 20px 0 10px; flex-wrap: wrap; }
+    nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    nav a:hover { color: var(--text-primary); }
+    nav a.home { color: #e63946; font-weight: 600; }
+    .divider { color: var(--text-secondary); opacity: 0.4; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; line-height: 1.3; margin: 24px 0 12px; background: linear-gradient(90deg, #fff 40%, #e63946); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .meta { color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 28px; }
+    h2 { font-size: 1.3rem; font-weight: 600; margin: 32px 0 12px; color: #fff; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 24px 0 8px; color: #e0e0f0; }
+    p { margin-bottom: 16px; color: #d0d0e8; }
+    ul, ol { margin: 0 0 16px 24px; color: #d0d0e8; }
+    li { margin-bottom: 8px; }
+    .cta-box { background: linear-gradient(135deg, rgba(230,57,70,0.15), rgba(67,97,238,0.15)); border: 1px solid rgba(230,57,70,0.3); border-radius: var(--radius); padding: 28px; text-align: center; margin: 36px 0; }
+    .cta-box p { color: var(--text-secondary); margin-bottom: 16px; }
+    .cta-btn { display: inline-block; background: #e63946; color: #fff; text-decoration: none; padding: 14px 32px; border-radius: 999px; font-weight: 600; font-size: 1rem; transition: all 0.2s; box-shadow: 0 4px 20px rgba(230,57,70,0.4); }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(230,57,70,0.55); }
+    .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin: 20px 0; }
+    .related-links { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin: 32px 0; }
+    .related-links h3 { margin-top: 0; }
+    .related-links ul { margin-bottom: 0; }
+    .related-links a { color: #e63946; text-decoration: none; }
+    .related-links a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 32px 0; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 40px; }
+    footer a { color: var(--text-secondary); }
+
+    .timer-display-page {
+      font-size: clamp(3rem, 15vw, 5rem);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin: 40px 0;
+      letter-spacing: -2px;
+    }
+    .start-button-page {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      background: #4361ee;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(67,97,238,0.4);
+      border: none;
+      cursor: pointer;
+    }
+    .start-button-page:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(67,97,238,0.55); }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <nav>
+    <a href="/" class="home">🍅 PomodoroTimer.one</a>
+    <span class="divider">›</span>
+    <a href="/blog.html">Blog</a>
+    <span class="divider">›</span>
+    <span style="color: var(--text-primary);">50/10 Pomodoro Timer</span>
+  </nav>
+
+  <h1>50/10 Pomodoro Timer — Extended Focus Sessions</h1>
+  <p class="meta">⏱ Boost Deep Work & Concentration</p>
+
+  <div class="timer-display-page" id="timer-50-10-display">50:00</div>
+  <button class="start-button-page" id="start-50-10-timer">▶ Start 50/10 Pomodoro</button>
+
+  <div class="cta-box">
+    <p>Our main Pomodoro timer is fully customizable for any work-break ratio you need, with task tracking and stats.</p>
+    <a href="/" class="cta-btn">Customize Your Pomodoro Timer →</a>
+  </div>
+
+  <h2>Optimize Your Deep Work with the 50/10 Pomodoro Cycle</h2>
+  <p>For tasks requiring intense concentration, a standard 25-minute Pomodoro might feel too short. The 50/10 Pomodoro cycle offers an excellent alternative: 50 minutes of focused work followed by a 10-minute break. This extended work block is perfect for deep work, complex problem-solving, and creative tasks, allowing you to immerse yourself without feeling rushed.</p>
+  <p>This method caters to individuals who find their flow state takes longer to achieve and prefer longer periods of uninterrupted work, while still benefiting from structured breaks to prevent mental fatigue.</p>
+
+  <h2>Benefits of the 50/10 Pomodoro Timer</h2>
+  <h3>Sustained Deep Focus</h3>
+  <p>The 50-minute work interval allows for a more profound immersion into complex tasks. It reduces the frequency of switching contexts compared to the 25-minute cycle, which can be beneficial for high-cognitive load activities like coding, writing long-form content, or in-depth research.</p>
+
+  <h3>Effective Recharge</h3>
+  <p>A 10-minute break is substantial enough to truly step away, grab a coffee, stretch, or briefly disconnect, ensuring you return to your work refreshed and ready for the next intensive session. It prevents the lingering fatigue that can accumulate with shorter breaks after deep focus.</p>
+
+  <h3>Adaptability for Professionals</h3>
+  <p>Many professionals, including software developers, academics, and designers, find the 50/10 ratio aligns better with their natural work rhythms and project demands. It accommodates the time needed to build momentum on intricate problems.</p>
+
+  <h2>Implementing the 50/10 Cycle Effectively</h2>
+  <ul>
+    <li><strong>Plan Bigger Chunks:</strong> Before starting, break down your work into tasks that can realistically fit within 50-minute blocks.</li>
+    <li><strong>Hydrate & Move:</strong> Use your 10-minute breaks to move around, rehydrate, or do a quick mental reset activity to maximize the restorative effect.</li>
+    <li><strong>Batch Small Tasks:</strong> If you have many quick tasks, consider dedicating one or two 50-minute blocks to batching and completing them efficiently.</li>
+    <li><strong>Longer Breaks After Four:</strong> Just like the classic Pomodoro, after four 50/10 cycles (a total of 4 hours of focus!), take a longer break of 20-30 minutes to fully disengage and recharge.</li>
+  </ul>
+
+  <h2>Who Can Benefit Most from a 50/10 Timer?</h2>
+  <ul>
+    <li><strong>Software Developers:</strong> For long coding sessions, debugging, or architectural design.</li>
+    <li><strong>Writers & Researchers:</strong> Ideal for drafting chapters, conducting literature reviews, or analyzing data.</li>
+    <li><strong>Students:</strong> For deep study sessions, essay writing, or preparing for complex exams.</li>
+    <li><strong>Creatives:</strong> For undisturbed periods of design, composition, or brainstorming.</li>
+  </ul>
+
+  <div class="related-links">
+    <h3>Boost Your Productivity Further</h3>
+    <ul>
+      <li><a href="/pomodoro-technique.html">What is the Pomodoro Technique?</a></li>
+      <li><a href="/coding-timer.html">Pomodoro Timer for Coding</a></li>
+      <li><a href="/study-timer.html">Free Study Timer Online</a></li>
+      <li><a href="/pomodoro-vs-time-blocking.html">Pomodoro vs Time Blocking — Which Works Better?</a></li>
+      <li><a href="/best-pomodoro-technique-apps.html">7 Best Pomodoro Apps & Timers Compared (2026)</a></li>
+      <li><a href="/blog.html">← Back to All Articles</a></li>
+    </ul>
+  </div>
+</div>
+<footer>
+  <p>© 2026 <a href="/">PomodoroTimer.one</a> — Free Online Timers for Enhanced Focus</p>
+  <p style="margin-top:6px; opacity:0.5;">The Pomodoro Technique® is a registered trademark of Francesco Cirillo. This site is not affiliated with him.</p>
+</footer>
+
+<script>
+  const timerDisplay5010 = document.getElementById('timer-50-10-display');
+  const startButton5010 = document.getElementById('start-50-10-timer');
+  let currentMode5010 = 'focus'; // 'focus' or 'break'
+  let timeLeft5010 = 50 * 60; // Start with 50 minutes
+  let timerInterval5010 = null;
+  let running5010 = false;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function formatTime(s) { return `${pad(Math.floor(s / 60))}:${pad(s % 60)}`; }
+
+  function updateDisplay5010() {
+    timerDisplay5010.textContent = formatTime(timeLeft5010);
+    const titleMode = currentMode5010 === 'focus' ? 'Focus' : 'Break';
+    document.title = `${formatTime(timeLeft5010)} — ${titleMode} | 50/10 Timer`;
+  }
+
+  function playBeep() {
+    try {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(880, audioCtx.currentTime); // A5 note
+      gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1); // Fade out over 1 sec
+      oscillator.start();
+      oscillator.stop(audioCtx.currentTime + 1); // Stop after 1 second
+    } catch (e) { console.error("Audio playback failed:", e); }
+  }
+
+  function startTimer5010() {
+    if (running5010) return;
+    running5010 = true;
+    startButton5010.textContent = currentMode5010 === 'focus' ? '⏸ Pause Focus' : '⏸ Pause Break';
+    startButton5010.style.background = '#e63946';
+    startButton5010.style.boxShadow = '0 4px 20px rgba(230,57,70,0.4)';
+
+    timerInterval5010 = setInterval(() => {
+      if (timeLeft5010 <= 0) {
+        clearInterval(timerInterval5010);
+        running5010 = false;
+        playBeep();
+        if (currentMode5010 === 'focus') {
+          currentMode5010 = 'break';
+          timeLeft5010 = 10 * 60; // 10 minute break
+          startButton5010.textContent = '▶ Start Break';
+          startButton5010.style.background = '#06d6a0'; // Green for break start
+          startButton5010.style.boxShadow = '0 4px 20px rgba(6,214,160,0.4)';
+        } else {
+          currentMode5010 = 'focus';
+          timeLeft5010 = 50 * 60; // 50 minute focus
+          startButton5010.textContent = '▶ Start Focus';
+          startButton5010.style.background = '#4361ee'; // Blue for focus start
+          startButton5010.style.boxShadow = '0 4px 20px rgba(67,97,238,0.4)';
+        }
+        updateDisplay5010();
+        return;
+      }
+      timeLeft5010--;
+      updateDisplay5010();
+    }, 1000);
+  }
+
+  function pauseTimer5010() {
+    running5010 = false;
+    clearInterval(timerInterval5010);
+    startButton5010.textContent = currentMode5010 === 'focus' ? '▶ Resume Focus' : '▶ Resume Break';
+    startButton5010.style.background = '#e63946'; // Red for pause
+    startButton5010.style.boxShadow = '0 4px 20px rgba(230,57,70,0.4)';
+  }
+
+  startButton5010.addEventListener('click', () => {
+    if (running5010) {
+      pauseTimer5010();
+    } else {
+      startTimer5010();
+    }
+  });
+
+  // Initial display update
+  updateDisplay5010();
+</script>
+</body>
+</html>
