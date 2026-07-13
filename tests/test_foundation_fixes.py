@@ -26,7 +26,7 @@ class FoundationFixesTest(unittest.TestCase):
             "https://pomodorotimer.one/",
             "https://pomodorotimer.one/pomodoro-technique.html",
             "https://pomodorotimer.one/25-minute-timer.html",
-            "https://pomodorotimer.one/50-25-timer.html",
+            "https://pomodorotimer.one/50-10-timer.html",
             "https://pomodorotimer.one/study-timer.html",
             "https://pomodorotimer.one/coding-timer.html",
             "https://pomodorotimer.one/pomodoro-timer-with-music.html",
@@ -43,7 +43,7 @@ class FoundationFixesTest(unittest.TestCase):
         html = read("index.html")
         for href in [
             "/25-minute-timer.html",
-            "/50-25-timer.html",
+            "/50-10-timer.html",
             "/study-timer.html",
             "/coding-timer.html",
             "/pomodoro-timer-with-music.html",

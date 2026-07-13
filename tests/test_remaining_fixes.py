@@ -26,7 +26,7 @@ class RemainingFixesTest(unittest.TestCase):
         for url in [
             "https://pomodorotimer.one/",
             "https://pomodorotimer.one/25-minute-timer.html",
-            "https://pomodorotimer.one/50-25-timer.html",
+            "https://pomodorotimer.one/50-10-timer.html",
             "https://pomodorotimer.one/study-timer.html",
             "https://pomodorotimer.one/coding-timer.html",
             "https://pomodorotimer.one/pomodoro-timer-with-music.html",
@@ -91,7 +91,7 @@ class RemainingFixesTest(unittest.TestCase):
     def test_non_home_pages_have_breadcrumb_schema(self):
         pages = [
             "25-minute-timer.html",
-            "50-25-timer.html",
+            "50-10-timer.html",
             "study-timer.html",
             "coding-timer.html",
             "pomodoro-timer-with-music.html",
