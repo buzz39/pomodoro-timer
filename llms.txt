@@ -1,0 +1,17 @@
+# pomodorotimer.one
+
+> A free, no-signup online Pomodoro timer for focus and productivity, with study/coding-specific variants and guides on the Pomodoro Technique.
+
+## Main tool
+- [Pomodoro Timer](https://pomodorotimer.one/): customizable focus timer, task list, session stats
+- [25 Minute Timer](https://pomodorotimer.one/25-minute-timer.html)
+- [50/10 Timer](https://pomodorotimer.one/50-25-timer.html)
+- [Study Timer](https://pomodorotimer.one/study-timer.html)
+- [Coding Timer](https://pomodorotimer.one/coding-timer.html)
+- [Timer with Music](https://pomodorotimer.one/pomodoro-timer-with-music.html)
+
+## Guides
+- [What is the Pomodoro Technique?](https://pomodorotimer.one/pomodoro-technique.html)
+- [The Pomodoro Technique: Complete Guide](https://pomodorotimer.one/blog-pomodoro-technique-guide.html)
+- [Focus Tips for Developers](https://pomodorotimer.one/blog-focus-tips-for-developers.html)
+- [Best Study Methods](https://pomodorotimer.one/blog-best-study-methods.html)

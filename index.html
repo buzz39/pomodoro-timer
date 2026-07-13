@@ -570,11 +570,25 @@
     /* ============ MOBILE ============ */
     @media (max-width: 480px) {
       :root { --timer-size: 240px; }
-      .btn { padding: 11px 20px; font-size: 0.92rem; }
+      .mode-tab { min-height: 48px; padding: 12px 22px; }
+      .btn { min-height: 48px; padding: 13px 22px; font-size: 0.95rem; }
+      .settings-toggle { min-height: 48px; padding: 12px 22px; }
+      .task-input { min-height: 48px; }
+      .btn-add { min-height: 48px; min-width: 48px; padding: 10px 18px; }
       .affiliate-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT9D6TFKV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-HFT9D6TFKV");</script></head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT9D6TFKV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-HFT9D6TFKV");</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://pomodorotimer.one/#organization",
+  "name": "PomodoroTimer.one",
+  "url": "https://pomodorotimer.one/",
+  "logo": "https://pomodorotimer.one/og-image.png"
+}
+</script>
+</head>
 <body>
 
 <div class="app-wrapper">
@@ -639,6 +653,12 @@
   </div>
   <div class="kbd-hints">
     <kbd>Space</kbd> Start/Pause &nbsp; <kbd>R</kbd> Reset &nbsp; <kbd>S</kbd> Skip
+  </div>
+
+  <!-- Citable definition for search and AI answers -->
+  <div class="section-card pomodoro-definition">
+    <h2 class="section-title">What is a Pomodoro Timer?</h2>
+    <p>A Pomodoro timer is a free productivity tool that breaks work into focused 25-minute intervals called "Pomodoros," separated by 5-minute breaks, based on Francesco Cirillo's Pomodoro Technique. This timer lets you customize session lengths, track completed Pomodoros, and build a daily task list — all in your browser, with no signup required.</p>
   </div>
 
   <!-- STATS -->
