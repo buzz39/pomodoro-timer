@@ -5,7 +5,7 @@
 ## Main tool
 - [Pomodoro Timer](https://pomodorotimer.one/): customizable focus timer, task list, session stats
 - [25 Minute Timer](https://pomodorotimer.one/25-minute-timer.html)
-- [50/10 Timer](https://pomodorotimer.one/50-25-timer.html)
+- [50/10 Timer](https://pomodorotimer.one/50-10-timer.html)
 - [Study Timer](https://pomodorotimer.one/study-timer.html)
 - [Coding Timer](https://pomodorotimer.one/coding-timer.html)
 - [Timer with Music](https://pomodorotimer.one/pomodoro-timer-with-music.html)

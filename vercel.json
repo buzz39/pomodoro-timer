@@ -52,5 +52,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/50-25-timer.html",
+      "destination": "/50-10-timer.html",
+      "permanent": true
+    }
   ]
 }
